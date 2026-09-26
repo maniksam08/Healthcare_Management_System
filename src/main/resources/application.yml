@@ -1,0 +1,39 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 162066314958-3d3iskmvgdm1esblg45c755jnp5ete0k.apps.googleusercontent.com
+            client-secret: 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
+            scope: openid,profile,email
+            redirect-uri: "http://localhost:8080/login/oauth2/code/google"
+            authorization-grant-type: authorization_code
+            client-name: Google
+
+          github:
+            client-id: Ov23lil4ecNLfxSLjiMs
+            client-secret: 5cd7c45270cb1d32faff98e336d7da17646cf7d4
+            scope: read:user,user:email
+            redirect-uri: "http://localhost:8080/login/oauth2/code/github"
+            authorization-grant-type: authorization_code
+            client-name: GitHub
+
+          twitter:
+            client-id: YOUR_TWITTER_CLIENT_ID
+            client-secret: YOUR_TWITTER_CLIENT_SECRET
+            redirect-uri: "http://localhost:8080/login/oauth2/code/twitter"
+            authorization-grant-type: authorization_code
+            scope:
+              - tweet.read
+              - users.read
+              - offline.access
+            client-name: Twitter
+            provider: twitter
+
+        provider:
+          twitter:
+            authorization-uri: https://twitter.com/i/oauth2/authorize
+            token-uri: https://api.twitter.com/2/oauth2/token
+            user-info-uri: https://api.twitter.com/2/users/me
+            user-name-attribute: id
